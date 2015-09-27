@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var data = generateData();
-  //createHTMLVis(data);
+  createHTMLVis(data);
   createSVGVis(data);
 });
 
