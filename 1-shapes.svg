@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink"
+     width='150px' height='150px'>
+  <text x='100' y='100'> Test </text>
+  <rect x='0' y='0' width='80' height='80' opacity='0.5'/>
+</svg>
