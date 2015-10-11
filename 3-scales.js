@@ -9,8 +9,9 @@ function createSVGVis(data) {
   var height = 600;
   var barPadding = 2;
 
-  var scale = d3.scale.linear()
-    .domain([0, d3.max(data)]).rangeRound([0, height - 10])
+  var yScale = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .rangeRound([0, height - 10])
 
   var svg = d3.select('body').append('svg')
     .attr('width', width).attr('height', height);
@@ -25,19 +26,19 @@ function createSVGVis(data) {
       return (i * (width / data.length));
     })
     .attr('y', function(d, i) {
-      return height - scale(d);
+      return height - yScale(d);
     })
     .attr('fill', function(d) {
       return "rgb(0, 0, " + Math.floor((255 / d3.max(data))*d) +")";
     })
     .attr('height', function(d) {
-      return scale(d);
+      return yScale(d);
     });
 }
 
 function generateData() {
   var data = [];
-  for (var i = 0; i < 100; i++) {
+  for (var i = 0; i < 60; i++) {
     data[i] = Math.random() * 2000;
   }
   return data;
